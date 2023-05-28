@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- site metas -->
+    <title>Reminders</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="client.html">Back</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="login_bt">
+                            <ul>
+                                <li>
+                                    <a href="login2.html">
+                                        <span class="user_icon">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                        </span>
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+
+ 
+   <style>
+   body {
+     font-family: Arial;
+     font-size: 17px;
+     padding: 8px;
+   }
+   
+   * {
+     box-sizing: border-box;
+   }
+   
+   .main_section {
+            padding-top: 50px;
+        }
+
+        .reminder_form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .reminder_form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .reminder_form .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .reminder_form .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .reminder_form .form-group input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .reminder_form .form-group button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reminder_form .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #remindersContainer {
+            margin-top: 50px;
+        }
+
+        #remindersList {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #remindersList li {
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+        }
+   
+   .col-25 {
+     -ms-flex: 25%; /* IE10 */
+     flex: 25%;
+   }
+   
+   .col-50 {
+     -ms-flex: 50%; /* IE10 */
+     flex: 50%;
+   }
+   
+   .col-75 {
+     -ms-flex: 75%; /* IE10 */
+     flex: 75%;
+   }
+   
+   .col-25,
+   .col-50,
+   .col-75 {
+     padding: 0 16px;
+   }
+   
+   .container {
+     background-color: #f2f2f2;
+     padding: 5px 20px 15px 20px;
+     border: 1px solid lightgrey;
+     border-radius: 3px;
+   }
+   
+   input[type=text] {
+     width: 100%;
+     margin-bottom: 20px;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+   }
+   
+   label {
+     margin-bottom: 10px;
+     display: block;
+   }
+   
+   .icon-container {
+     margin-bottom: 20px;
+     padding: 7px 0;
+     font-size: 24px;
+   }
+   
+   .btn {
+     background-color: #04AA6D;
+     color: white;
+     padding: 12px;
+     margin: 10px 0;
+     border: none;
+     width: 100%;
+     border-radius: 3px;
+     cursor: pointer;
+     font-size: 17px;
+   }
+   
+   .btn:hover {
+     background-color: #45a049;
+   }
+   
+   a {
+     color: #2196F3;
+   }
+   
+   hr {
+     border: 1px solid lightgrey;
+   }
+   
+   span.price {
+     float: left;
+     color: grey;
+   }
+   
+   
+   </style>
+   </head>
+<body>
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form action="/action_page.php">
+          
+            <div class="row">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="john@example.com">
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" id="city" name="city" placeholder="New York">
+    
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="NY">
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001">
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-50">
+                <h3>Payment</h3>
+                 <div class="form-group">
+                                <label for="bill_type">Bill Type</label>
+                                <select class="form-control" id="bill_type">
+                                    <option value="gas">Gas</option>
+                                    <option value="electricity">Electricity</option>
+                                    <option value="water">Water</option>
+                                    <option value="telephone">Telephone</option>
+                                </select>
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                <div class="row">
+                  <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                  </div>
+                  <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            <input type="submit" id="checkout-payment-button" value="checkout" class="btn" >
+            
+
+          </form>
+        </div>
+      </div>
+  
+
+      <script>
+        const submitApplicationButton = document.getElementById('checkout-payment-button');
+        submitApplicationButton.addEventListener('click', (event) => {
+            event.preventDefault(); // prevent the form from submitting normally
+
+            // Check if all required fields are filled
+           
+            const fname = document.getElementById('fname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const adr = document.getElementById('adr').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const zip = document.getElementById('zip').value.trim();
+            const bill_type = document.getElementById('bill_type').value.trim();
+            const cname = document.getElementById('cname').value.trim();
+            const ccnum = document.getElementById('ccnum').value.trim();
+            const expmonth = document.getElementById('expmonth').value.trim();
+            const expyear = document.getElementById('expyear').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+            if (!fname || !email || !adr || !city || !state || !zip || !bill_type || !cname || !ccnum || !expmonth || !expyear || !cvv) {
+                // Show a pop-up message if any required fields are missing
+                alert('Please make sure to input all required data before trying to submit.');
+                return;
+            }
+            // All required fields are filled, submit the form
+            alert('Your your payment has been completed. You can close this page .');
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+
+   </html>
